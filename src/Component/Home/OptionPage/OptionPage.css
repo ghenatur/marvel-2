@@ -1,0 +1,10 @@
+.option-page{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+}
+.form-option{
+    width: 50%;
+    text-align: end;
+}

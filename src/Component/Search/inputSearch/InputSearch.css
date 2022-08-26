@@ -1,0 +1,23 @@
+.search {
+    width: 250px;
+    height: 30px;
+    display: flex;
+    border-radius: 15px;
+    overflow: hidden;
+    border: red 1px solid;
+}
+
+input {
+    width: 80%;
+    height: 100%;
+    padding-left: 10px;
+    outline: none;
+    border: none;
+}
+
+.btn {
+    width: 20%;
+    background-color: red;
+    text-align: center;
+    border: none;
+}
