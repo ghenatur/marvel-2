@@ -2,14 +2,11 @@ import React from 'react';
 import Card from "./Card/Card";
 import './Page.css'
 
-const Page = ({heroesPages, index}) => {
-    console.log(heroesPages, index)
-
+const Page = ({heroesPages}) => {
 
     return (
         <>
-
-            <div className={`page ${index + 1}`}>
+            <div className={`page `}>
                 {heroesPages && heroesPages.map((hero, index) =>
                     <Card
                         key={hero.id}
@@ -17,7 +14,7 @@ const Page = ({heroesPages, index}) => {
                         name={hero.name}
                         path={hero.thumbnail.path}
                         extension={hero.thumbnail.extension}
-                        index={index + 1}/>
+                        index={index}/>
                 )}
             </div>
         </>
