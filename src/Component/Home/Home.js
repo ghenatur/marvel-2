@@ -6,9 +6,7 @@ import basicHeroes from "./Functions/basicHeroes";
 import {apiKey2, urlMarvel} from "../keys/keys";
 import placementOnPages from "./Functions/placementOnPages";
 
-
-
-const Home = () => {
+const Home = ({setNrPage}) => {
     let [heroes, setHeroes] = useState([])
     const [option, setOption] = useState(10)
     const [nrButton, setNrButton] = useState(0)
@@ -23,6 +21,8 @@ const Home = () => {
 
     const handleButton = (nrButton) => {
         setNrButton(nrButton)
+        setNrPage(nrButton)
+
     }
     const placePage = placementOnPages(option, heroes)
 

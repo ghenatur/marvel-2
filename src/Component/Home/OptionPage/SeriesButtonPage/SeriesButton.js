@@ -7,7 +7,7 @@ const SeriesButton = ({placePage,clickButton}) => {
         <div className={'btn-container'}>
             {placePage && placePage.map((page, index) =>
 
-                    <ButtonPage key={Math.floor(Math.random() * 1000)} nrPage={index} clickButton={clickButton} />
+                    <ButtonPage key={Math.floor(Math.random() * 10000)} nrPage={index} clickButton={clickButton} />
 
             )}
         </div>
