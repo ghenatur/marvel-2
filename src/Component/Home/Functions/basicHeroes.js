@@ -3,7 +3,7 @@ import axios from "axios";
 const basicHeroes = async (urlMarvel, apiKey,limit) => {
 
     try {
-        const data = await axios.get(`${urlMarvel}${apiKey}`,
+        const data = await axios.get(`${urlMarvel}?${apiKey}`,
             {
                 params: {
                     limit:limit,

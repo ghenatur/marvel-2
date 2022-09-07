@@ -1,5 +1,5 @@
 import React, {useState} from 'react';
-import {apiKey2, urlMarvel} from "../keys/keys";
+import {apiKey, urlMarvel} from "../keys/keys";
 import getHeroes from "./getHeroes/getHearoes";
 import InputSearch from "./inputSearch/InputSearch";
 import Page from "../Page/Page";
@@ -14,7 +14,7 @@ const Search = () => {
     }
 
     const clickButon = () => {
-        getHeroes(urlMarvel, searchHero, apiKey2).then(response => setHeroes(heroes = response.results))
+        getHeroes(urlMarvel, searchHero, apiKey).then(response => setHeroes(heroes = response.results))
     }
 
     const handleKeyPress = (e) => {

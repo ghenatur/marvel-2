@@ -5,6 +5,7 @@ import {Routes, Route} from "react-router-dom";
 import Header from "./Component/Header/Header";
 import ErrorPage from "./Component/ErrorPage/ErrorPage";
 import { useState} from "react";
+import Character from "./Component/Character/Character";
 
 
 function App() {
@@ -19,6 +20,7 @@ function App() {
             <Routes>
                 <Route path={'/'} element={<Home setNrPage={handleButton} />}/>
                 <Route path={`/page${page+1}`} element={<Home  setNrPage={handleButton} />}/>
+                <Route path={`/character:id`} element={<Character/>}/>
                 <Route path={'/search'} element={<Search/>}/>
                 <Route path={'*'} element={<ErrorPage/>}/>
             </Routes>

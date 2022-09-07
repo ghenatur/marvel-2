@@ -3,7 +3,7 @@ import OptionPage from "./OptionPage/OptionPage";
 import './Home.css'
 import Page from "../Page/Page";
 import basicHeroes from "./Functions/basicHeroes";
-import {apiKey2, urlMarvel} from "../keys/keys";
+import {apiKey, urlMarvel} from "../keys/keys";
 import placementOnPages from "./Functions/placementOnPages";
 
 const Home = ({setNrPage}) => {
@@ -11,9 +11,9 @@ const Home = ({setNrPage}) => {
     const [option, setOption] = useState(10)
     const [nrButton, setNrButton] = useState(0)
 
-    useEffect(()=>{
-       basicHeroes(urlMarvel, apiKey2, 100).then(response => setHeroes( response.results))
-    },[])
+    useEffect(() => {
+        basicHeroes(urlMarvel, apiKey, 100).then(response => setHeroes(response.results))
+    }, [])
 
     const handleOption = (option) => {
         setOption(option)
@@ -25,7 +25,6 @@ const Home = ({setNrPage}) => {
 
     }
     const placePage = placementOnPages(option, heroes)
-
     return (
         <div className={'home'}>
             <h1>Marvel heroes</h1>
