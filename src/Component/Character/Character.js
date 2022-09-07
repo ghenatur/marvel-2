@@ -12,30 +12,27 @@ const Character = () => {
     const character = id.slice(1)
     useEffect(() => {
         getCharacter(urlMarvel, character, apiKey).then(response => setHeroes(response.results))
-    },[character])
+    }, [character])
 
     return (
-        <div className={'character'}>
-            {/* eslint-disable-next-line array-callback-return */}
+        <div className={'container'}>
             {heroes && heroes.map((character) => {
-                if (id.includes(character.id)) {
-                    return (
-                        <>
-                            <div>
-                                <h2>Name hero: {character.name}</h2>
+                return (
+                    <div key={Math.floor(Math.random() * 10000)}>
+                        <div align={'center'}>
+                            <h2>{character.name}</h2>
+                        </div>
+                        <div className={'description'}>
+                            <img className={'character-img'}
+                                 src={`${character.thumbnail.path}/standard_fantastic.${character.thumbnail.extension}`}
+                                 alt={character.name}/>
+                            <div className={'character-text'}>
+                                {character.description ? <p><b> Description:</b> {character.description}</p> : null}
+                                <a href={character.urls[0].url}>{character.urls[0].type}</a>
                             </div>
-                            <div className={'description'}>
-                                <img className={'character-img'}
-                                     src={`${character.thumbnail.path}/standard_fantastic.${character.thumbnail.extension}`}
-                                     alt={character.name}/>
-                                <div className={'character-text'}>
-                                    {character.description ? <p><b> Description:</b> {character.description}</p> : null}
-                                    <a href={character.urls[0].url}>{character.urls[0].type}</a>
-                                </div>
-                            </div>
-                        </>
-                    )
-                }
+                        </div>
+                    </div>
+                )
             })}
         </div>
     );
