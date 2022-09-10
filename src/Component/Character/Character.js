@@ -9,7 +9,7 @@ import './Character.css'
 const Character = () => {
     const {id} = useParams()
     const [heroes, setHeroes] = useState([])
-    const character = id.slice(1)
+    const character = id
     useEffect(() => {
         getCharacter(urlMarvel, character, apiKey).then(response => setHeroes(response.results))
     }, [character])
